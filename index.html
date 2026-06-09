@@ -261,6 +261,47 @@
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .nav-links { display: none; }
     }
+
+    /* ── MEDIA MENTIONS ── */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .media-card {
+      display: flex; flex-direction: column;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .media-card:hover {
+      box-shadow: 0 8px 28px rgba(26,107,114,.12);
+      transform: translateY(-3px);
+    }
+    .media-source {
+      font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--teal); margin-bottom: .5rem;
+    }
+    .media-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--teal-dark);
+      font-weight: 600; margin-bottom: .5rem;
+      line-height: 1.4;
+    }
+    .media-desc {
+      font-size: .85rem; color: var(--muted);
+      flex: 1; line-height: 1.6; margin-bottom: 1rem;
+    }
+    .media-tag {
+      font-size: .75rem; font-weight: 600;
+      color: var(--gold);
+      border-top: 1px solid var(--border);
+      padding-top: .75rem; margin-top: auto;
+    }
   </style>
 </head>
 <body>
@@ -273,6 +314,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#media">Media</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -555,6 +597,74 @@
         <h4>UN SDSN Global Schools — Impact Measurement &amp; the SDGs</h4>
         <p>Presented on impact measurement frameworks for education advocacy, including application of the KAB (Knowledge, Attitudes, Behaviours) framework to SDG-aligned programme evaluation for Global Schools advocates.</p>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA MENTIONS -->
+<section id="media">
+  <div class="container">
+    <p class="section-label">Presence</p>
+    <h2 class="section-title">Media &amp; Online Mentions</h2>
+    <p class="section-subtitle">Features, profiles, and citations across organisations, publications, and platforms.</p>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://www.mercatus.org/students/don-lavoie-fellows" target="_blank">
+        <div class="media-source">Mercatus Center at George Mason University</div>
+        <div class="media-title">Don Lavoie Fellow — Class of 2025–2026</div>
+        <div class="media-desc">Listed among the current cohort of Don Lavoie Fellows, a competitive international fellowship in political economy open to graduate students across all disciplines worldwide.</div>
+        <div class="media-tag">Fellowship · 2025</div>
+      </a>
+
+      <a class="media-card" href="https://teachforall.org/news/global-girls-education-community-hosts-call-series-highlighting-advocates-projects" target="_blank">
+        <div class="media-source">Teach For All</div>
+        <div class="media-title">Global Girls' Education Advocates' Project Call Series</div>
+        <div class="media-desc">Co-authored feature on the Global Girls' Education Fellowship Call Series, presenting project work on girls' education and leadership development within the Teach For All global network.</div>
+        <div class="media-tag">Publication · March 2021</div>
+      </a>
+
+      <a class="media-card" href="https://www.globalschoolsprogram.org/team/nene-onyedi-ibezim" target="_blank">
+        <div class="media-source">Global Schools Program — UN SDSN</div>
+        <div class="media-title">Team Profile: Project Officer (Advocacy)</div>
+        <div class="media-desc">Featured as a Project Officer (Advocacy) at Global Schools, an initiative of the UN Sustainable Development Solutions Network, highlighting her education advocacy work and the Leading Kids Program.</div>
+        <div class="media-tag">Profile · UN SDSN</div>
+      </a>
+
+      <a class="media-card" href="https://www.suraasa.com/blog/teachers-olympiad-winner" target="_blank">
+        <div class="media-source">Suraasa</div>
+        <div class="media-title">Top 1% — International Teachers' Olympiad 2022</div>
+        <div class="media-desc">Featured in Suraasa's International Teachers' Olympiad winners blog as a Top 1% achiever globally, sharing reflections on professional development and continuous growth as an educator.</div>
+        <div class="media-tag">Feature · September 2023</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/watch?v=rhv1PSxFPPY" target="_blank">
+        <div class="media-source">Suraasa · YouTube</div>
+        <div class="media-title">Video Feature: The Value of the International Teachers' Olympiad</div>
+        <div class="media-desc">Featured in a video by Suraasa emphasising the importance of continuous professional development, speaking as a teacher coach affiliated with Teach For Nigeria.</div>
+        <div class="media-tag">Video · September 2023</div>
+      </a>
+
+      <a class="media-card" href="https://www.ashoka.edu.in/profile/nene-onyedi-ibezim/" target="_blank">
+        <div class="media-source">Ashoka University</div>
+        <div class="media-title">Young India Fellow Profile</div>
+        <div class="media-desc">Featured on Ashoka University's platform as a Young India Fellow, highlighting her leadership development work, the Leading Kids Program, and her advocacy for equitable access to quality education.</div>
+        <div class="media-tag">Profile · 2023–2024</div>
+      </a>
+
+      <a class="media-card" href="https://www.concordia.net/community/nene-ibezim/" target="_blank">
+        <div class="media-source">Concordia</div>
+        <div class="media-title">Community Profile — Education Leader</div>
+        <div class="media-desc">Profiled on Concordia's platform as an education leader and social entrepreneur, with focus on her work founding the Leading Kids Program and her experience across the Nigerian education sector.</div>
+        <div class="media-tag">Profile · September 2021</div>
+      </a>
+
+      <a class="media-card" href="https://www.instagram.com/p/DVgi8riDNR0/" target="_blank">
+        <div class="media-source">Teach For Nigeria · Instagram</div>
+        <div class="media-title">Alumni Feature — TFN Fellow, Class of 2018</div>
+        <div class="media-desc">Featured by Teach For Nigeria as an inspiring alumna from the Class of 2018, highlighting how the fellowship opened doors across communities, students, and her own professional journey.</div>
+        <div class="media-tag">Feature · March 2026</div>
+      </a>
 
     </div>
   </div>
