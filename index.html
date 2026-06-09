@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nene Ibezim | Education Researcher & M&E Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #1a6b72;
+      --teal-dark: #124d53;
+      --teal-light:#e8f4f5;
+      --gold:      #b07d2e;
+      --gold-light:#fdf3e3;
+      --bg:        #faf8f5;
+      --white:     #ffffff;
+      --text:      #2c2c2c;
+      --muted:     #6b7280;
+      --border:    #e5e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,248,245,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.15rem;
+      color: var(--teal-dark); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      font-size: 0.875rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 2rem 5rem;
+      display: grid; grid-template-columns: 1fr 340px; gap: 4rem;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--teal-dark); margin-bottom: 1rem;
+    }
+    .hero-text .tagline {
+      font-size: 1.05rem; color: var(--gold);
+      font-weight: 600; letter-spacing: .02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-text p {
+      font-size: 1rem; color: var(--muted);
+      max-width: 520px; margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .65rem 1.4rem; border-radius: 6px;
+      font-size: .875rem; font-weight: 600;
+      text-decoration: none; transition: all .2s;
+    }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-outline { border: 1.5px solid var(--teal); color: var(--teal); }
+    .btn-outline:hover { background: var(--teal-light); }
+
+    .hero-photo {
+      display: flex; justify-content: center;
+    }
+    .hero-photo img {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      box-shadow: 0 12px 40px rgba(26,107,114,.18);
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 5rem 2rem; }
+    section:nth-child(even) { background: var(--white); }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .6rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      color: var(--teal-dark); margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      font-size: 1rem; color: var(--muted);
+      max-width: 620px; margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem;
+      align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    .stat-card {
+      background: var(--teal-light);
+      border-radius: 10px; padding: 1.25rem;
+      border-left: 3px solid var(--teal);
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: var(--teal-dark);
+    }
+    .stat-label { font-size: .8rem; color: var(--muted); font-weight: 500; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.25rem;
+    }
+    .skill-group {
+      background: var(--bg); border-radius: 10px;
+      padding: 1.4rem; border: 1px solid var(--border);
+    }
+    .skill-group h4 {
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .75rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag {
+      background: var(--teal-light); color: var(--teal-dark);
+      border-radius: 20px; padding: .25rem .75rem;
+      font-size: .78rem; font-weight: 500;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.75rem; transition: box-shadow .2s, transform .2s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover {
+      box-shadow: 0 8px 32px rgba(26,107,114,.12);
+      transform: translateY(-3px);
+    }
+    .project-category {
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .6rem;
+    }
+    .project-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: var(--teal-dark);
+      margin-bottom: .6rem; line-height: 1.4;
+    }
+    .project-card p {
+      font-size: .88rem; color: var(--muted);
+      flex: 1; margin-bottom: 1.25rem;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+    .project-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .project-link {
+      font-size: .8rem; font-weight: 600; color: var(--teal);
+      text-decoration: none; display: flex; align-items: center; gap: .3rem;
+      border: 1px solid var(--teal); border-radius: 5px;
+      padding: .3rem .7rem; transition: all .2s;
+    }
+    .project-link:hover { background: var(--teal); color: #fff; }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .pub-item {
+      background: var(--bg); border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      border-left: 4px solid var(--teal);
+    }
+    .pub-type {
+      font-size: .72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--gold); margin-bottom: .4rem;
+    }
+    .pub-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--teal-dark);
+      margin-bottom: .35rem;
+    }
+    .pub-item p { font-size: .875rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    .contact-wrapper {
+      max-width: 600px; margin: 0 auto; text-align: center;
+    }
+    .contact-links {
+      display: flex; justify-content: center; gap: 1.25rem;
+      flex-wrap: wrap; margin-top: 2rem;
+    }
+    .contact-link {
+      display: flex; align-items: center; gap: .5rem;
+      padding: .7rem 1.5rem; border-radius: 8px;
+      font-size: .875rem; font-weight: 600;
+      text-decoration: none; transition: all .2s;
+    }
+    .contact-link.email { background: var(--teal); color: #fff; }
+    .contact-link.email:hover { background: var(--teal-dark); }
+    .contact-link.linkedin { background: #0077b5; color: #fff; }
+    .contact-link.linkedin:hover { background: #005f94; }
+    .contact-link.github { background: #1c1c1e; color: #fff; }
+    .contact-link.github:hover { background: #333; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: .8rem; color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 3rem 1.5rem; }
+      .hero-photo { order: -1; }
+      .hero-photo img { width: 180px; height: 180px; }
+      .hero-actions { justify-content: center; }
+      .hero-text p { margin: 0 auto 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Nene Ibezim</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <p class="tagline">Education Researcher · M&amp;E Specialist · Africa Development</p>
+    <h1>Nene Ibezim</h1>
+    <p>
+      I design and evaluate education programmes across Sub-Saharan Africa, with a focus on
+      foundational learning, gender equity, and data-driven decision-making. I translate research
+      into policy-relevant insights for governments, NGOs, and international development organisations.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">View My Work</a>
+      <a class="btn btn-outline" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="profile.jpg" alt="Nene Ibezim" />
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Background &amp; Experience</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am an education development professional and researcher based in Nigeria, affiliated with
+          <strong>Teach For Nigeria</strong> and consulting with state government agencies and nonprofits
+          on programme evaluation and data systems. My work spans programme management, monitoring &amp;
+          evaluation, research design, and capacity building.
+        </p>
+        <p>
+          I hold an <strong>M.S.Ed. in International Education Development</strong> from the University of
+          Pennsylvania Graduate School of Education, and a <strong>B.A. in Education</strong> from the
+          University of Lagos. My academic work has been presented at the Comparative and International
+          Education Society (CIES) Annual Conference and at UN SDSN Global Schools events.
+        </p>
+        <p>
+          I am the founder of the <strong>Leading Kids Program</strong>, an initiative supporting girls'
+          leadership development. I also design and run Excel and data analysis training programmes through
+          <strong>Leaders Tribe</strong>, building data capacity in Nigerian professionals.
+        </p>
+        <p>
+          My research sits at the intersection of <em>decolonial education theory</em>, <em>foundational
+          literacy assessment</em>, and <em>programme effectiveness</em> — with a commitment to
+          centring African knowledge systems in how we measure and understand learning.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Years in Education Development</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Countries of Research Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">International Conference Presentations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">M.S.Ed.</div>
+          <div class="stat-label">University of Pennsylvania GSE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Skills &amp; Methods</h2>
+    <p class="section-subtitle">A cross-disciplinary toolkit spanning quantitative analysis, evaluation design, and education policy.</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Data &amp; Analysis</h4>
+        <div class="skill-tags">
+          <span class="tag">Stata</span>
+          <span class="tag">Excel</span>
+          <span class="tag">SPSS</span>
+          <span class="tag">Logistic Regression</span>
+          <span class="tag">Panel Data</span>
+          <span class="tag">Thematic Analysis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Research Design</h4>
+        <div class="skill-tags">
+          <span class="tag">RCT Design</span>
+          <span class="tag">Survey Design</span>
+          <span class="tag">Mixed Methods</span>
+          <span class="tag">EGRA</span>
+          <span class="tag">Multilevel Regression</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>M&amp;E Frameworks</h4>
+        <div class="skill-tags">
+          <span class="tag">Logic Models</span>
+          <span class="tag">KAB Framework</span>
+          <span class="tag">Results Frameworks</span>
+          <span class="tag">Theory of Change</span>
+          <span class="tag">Impact Measurement</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Domain Areas</h4>
+        <div class="skill-tags">
+          <span class="tag">Foundational Literacy</span>
+          <span class="tag">Girls' Education</span>
+          <span class="tag">Teacher Effectiveness</span>
+          <span class="tag">SDGs</span>
+          <span class="tag">Decolonial Theory</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Communication</h4>
+        <div class="skill-tags">
+          <span class="tag">Policy Briefs</span>
+          <span class="tag">Stakeholder Reports</span>
+          <span class="tag">Conference Presentations</span>
+          <span class="tag">Data Visualisation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Tools &amp; Platforms</h4>
+        <div class="skill-tags">
+          <span class="tag">GitHub</span>
+          <span class="tag">ODK / KoBoToolbox</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">Microsoft Office</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Work</p>
+    <h2 class="section-title">Projects &amp; Research</h2>
+    <p class="section-subtitle">A selection of research, evaluation, and data analysis projects across education development contexts.</p>
+    <div class="projects-grid">
+
+      <!-- 1 -->
+      <div class="project-card">
+        <p class="project-category">Quantitative Analysis · Rwanda</p>
+        <h3>Mobile Money &amp; Financial Inclusion Analysis</h3>
+        <p>Stata-based analytical assessment for Laterite Research using mobile money survey data from Rwanda. Tasks included data reshaping, financial inclusion dummy construction, market structure analysis, failed transaction rate testing, and logistic regression modelling of account cancellation.</p>
+        <div class="project-tags">
+          <span class="tag">Stata</span><span class="tag">Logistic Regression</span><span class="tag">Panel Data</span><span class="tag">FinTech</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="https://github.com/Nene-code/mobile-money-analysis" target="_blank">
+            ⌥ GitHub Repo
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="project-card">
+        <p class="project-category">Programme Evaluation · Nigeria</p>
+        <h3>Teach For Nigeria Fellowship — Full Evaluation Plan</h3>
+        <p>A comprehensive evaluation of the TFN Two-Year Fellowship Programme in Ogun State. Deliverables included a programme description, problem statement and literature review, logic model, evaluation purpose statement, data collection instrument (quantitative survey), and a full evaluation plan with administration and data use frameworks.</p>
+        <div class="project-tags">
+          <span class="tag">M&amp;E</span><span class="tag">Logic Model</span><span class="tag">Survey Design</span><span class="tag">Nigeria</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="assets/Evaluation Plan.pdf" target="_blank">↗ Evaluation Plan</a>
+          <a class="project-link" href="assets/Logic Model.pdf" target="_blank">↗ Logic Model</a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="project-card">
+        <p class="project-category">RCT Design · Nigeria</p>
+        <h3>From Coaching to Classroom Effectiveness — RCT Proposal</h3>
+        <p>Proposed a two-arm individual-level randomised controlled trial to estimate the causal effect of high-dose instructional coaching on TFN fellow teaching effectiveness. Targeting MDES of 0.50 SD at 80% power, with 160 fellows (80 per arm) and primary endpoint at Month 12.</p>
+        <div class="project-tags">
+          <span class="tag">RCT</span><span class="tag">Causal Inference</span><span class="tag">Teacher Effectiveness</span><span class="tag">Stata</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="assets/RCT_Proposal.pdf" target="_blank">↗ View Proposal</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="project-card">
+        <p class="project-category">Impact Evaluation · USA</p>
+        <h3>First-Year Seminar Impact Evaluation — University of Pennsylvania</h3>
+        <p>Evaluated the impact of First-Year Seminars on student belonging, academic adjustment, and dialogue skills at Penn's College of Arts and Sciences across Fall 2024 and Spring 2025. Combined baseline/endline surveys and produced a comparative synthesis report for programme leaders.</p>
+        <div class="project-tags">
+          <span class="tag">Survey Evaluation</span><span class="tag">Higher Education</span><span class="tag">Mixed Methods</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="assets/FYS Impact Report 2024_2025.pdf" target="_blank">↗ Impact Report</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="project-card">
+        <p class="project-category">Qualitative Analysis · USA</p>
+        <h3>STEM Course Qualitative Evaluation — Thematic Analysis</h3>
+        <p>Conducted inductive thematic analysis and keyword coding on 7,760 analysable student course evaluation comments (Fall 2013 – Spring 2024) from STEM courses at a university, identifying recurring patterns in student experience across 22 academic terms.</p>
+        <div class="project-tags">
+          <span class="tag">Thematic Analysis</span><span class="tag">Qualitative Methods</span><span class="tag">STEM Education</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="assets/STEM_Qual_Analysis_Report.pdf" target="_blank">↗ View Report</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="project-card">
+        <p class="project-category">Quantitative Research · USA</p>
+        <h3>Geographic &amp; Economic Predictors of Nonprofit Donation Revenue Growth</h3>
+        <p>Used national survey data (Spring 2021) to examine how geographic location and community economic conditions influence nonprofit financial health. Found that economic disadvantage — more than urban/rural geography — is the primary driver of reduced donation revenue growth.</p>
+        <div class="project-tags">
+          <span class="tag">Regression Analysis</span><span class="tag">Nonprofit Sector</span><span class="tag">Survey Data</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="assets/Research Method Paper.pdf" target="_blank">↗ Research Paper</a>
+          <a class="project-link" href="assets/Research Proposal.pdf" target="_blank">↗ Proposal</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS & PRESENTATIONS -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Scholarship</p>
+    <h2 class="section-title">Publications &amp; Presentations</h2>
+    <p class="section-subtitle">Peer-reviewed work, conference papers, and invited presentations.</p>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <p class="pub-type">Conference Paper &amp; Capstone</p>
+        <h4>Beyond the Numbers: Decolonizing Learning Outcomes and Reclaiming Educational Purpose for Peace in African Schooling</h4>
+        <p>Comparative and International Education Society (CIES) Annual Conference, 2026 · Penn GSE Capstone Showcase, 2026. Argues that outcome-based governance carries colonial epistemological assumptions that inflict epistemic harm by marginalising African relational and communal educational values. Proposes peace-affirming assessment as a constructive alternative rooted in Ubuntu philosophy.</p>
+        <div style="margin-top:.75rem">
+          <a class="project-link" href="assets/CIES Paper.pdf" target="_blank" style="display:inline-flex">↗ View Paper</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <p class="pub-type">Book Chapter</p>
+        <h4>Publication in Teach For All Network Volume</h4>
+        <p>Contributed chapter in a Teach For All network publication drawing on field experience and programme insights from the Teach For Nigeria fellowship and the broader education equity landscape in Nigeria.</p>
+      </div>
+
+      <div class="pub-item">
+        <p class="pub-type">Invited Presentation</p>
+        <h4>UN SDSN Global Schools — Impact Measurement &amp; the SDGs</h4>
+        <p>Presented on impact measurement frameworks for education advocacy, including application of the KAB (Knowledge, Attitudes, Behaviours) framework to SDG-aligned programme evaluation for Global Schools advocates.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrapper">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <p style="color:var(--muted); margin-bottom:.5rem">
+        I am open to research collaborations, consulting engagements, and conversations about
+        education policy, M&amp;E, and development in Africa. Feel free to reach out.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link email" href="mailto:nene.ibezim@gmail.com">
+          ✉ nene.ibezim@gmail.com
+        </a>
+        <a class="contact-link linkedin" href="https://linkedin.com/in/nene-ibezim" target="_blank">
+          in LinkedIn
+        </a>
+        <a class="contact-link github" href="https://github.com/Nene-code" target="_blank">
+          ⌥ GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Nene Ibezim · Built with GitHub Pages</p>
+</footer>
+
+</body>
+</html>
